@@ -18,6 +18,8 @@ virtualenv venv
 
 . venv/bin/activate
 
+pip instll django
+
 pip install psycopg2
 
 ```
