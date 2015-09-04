@@ -1,13 +1,14 @@
 # refineryApp_Django
 Same project as before, but implemented in Django rather than Flask
 
-Install instructions:
+##Install instructions:
+```bash
+pip install virtualenv
 
-`pip install virtualenv`
+cd RefAppDjango
 
-`cd RefAppDjango`
+virtualenv venv
 
-`virtualenv venv`
+. venv/bin/activate
 
-`. venv/bin/activate`
-
+```
