@@ -77,7 +77,11 @@ WSGI_APPLICATION = 'refineryApp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.path.join(BASE_DIR, 'db.postgresql'),
+        'NAME': 'mydb',
+        'USER': 'scott',
+        'PASSWORD': 'Hockey15!',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
