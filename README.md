@@ -1,4 +1,4 @@
-# refineryApp_Django
+# RefAppDjango
 Same project as before, but implemented in Django rather than Flask
 
 ##Install instructions:
