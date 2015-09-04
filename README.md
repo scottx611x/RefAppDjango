@@ -10,6 +10,12 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 brew install postgresql
 
+postgres -D /usr/local/var/postgres
+
+edit user and pass in DATABASES in settings.py
+
+createdb <db_name>
+
 git clone https://github.com/scottx611x/RefAppDjango.git
 
 cd RefAppDjango
@@ -21,5 +27,9 @@ virtualenv venv
 pip instll django
 
 pip install psycopg2
+
+python manage.py migrate
+
+python manage.py runserver
 
 ```
