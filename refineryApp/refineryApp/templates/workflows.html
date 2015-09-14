@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html ng-app="refineryApp2">
+<head>
+    <title>Workflows - RefineryApp</title>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/restangular/1.3.1/restangular.min.js"></script>
+    <script type="text/javascript" src="/static/js/wf.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+<body>
+{% verbatim %}
+<div class="titleWrapper">
+    <br>
+<h1>RefineryApp</h1>
+<h2>Workflows</h2>
+    </div>
+    <div id="workflow_wrapper" ng-controller="WorkflowController">
+        <div id="workflow_inner">
+            <div class = "workflow" ng-repeat="workflow in workflows">
+                <div id="center_text">
+                <p><b>Id:</b> {{workflow.id}}</p>
+                <p><b>Name:</b> {{workflow.workflow_name}}</p>
+                <p><b>Belongs to:</b> {{workflow.category.category_name}}</p>
+                <p><b>Desc:</b> {{workflow.workflow_Description}}</p>
+                <p><b>Steps:</b> {{workflow.workflow_Steps}}</p>
+                <p><b>Created At:</b> {{workflow.date_Created}}</p>
+                <p><b>Updated At:</b> {{workflow.last_Modified}}</p>
+                    </div>
+
+                <div class="view_delete"><button class = "view">View</button><button class = "delete">Delete</button></div>
+            </div>
+        </div>
+
+    </div>
+{% endverbatim %}
+</body>
+</html>

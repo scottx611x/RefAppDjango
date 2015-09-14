@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from os import path
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -38,7 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'refineryApp',
-    'tastypie'
+    'tastypie',
+    'djangular',
+    'crispy_forms',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -104,5 +107,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+TOP_DIR = os.getcwd()
 
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+STATICFILES_DIRS = [
+    path.join(TOP_DIR, 'static'),
+]
+
+STATIC_ROOT = path.join(TOP_DIR, 'staticfiles')
 STATIC_URL = '/static/'

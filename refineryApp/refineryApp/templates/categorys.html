@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html ng-app="refineryApp">
+<head>
+    <title>Categorys - RefineryApp</title>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/restangular/1.3.1/restangular.min.js"></script>
+    <script type="text/javascript" src="/static/js/cat.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+<body>
+{% verbatim %}
+<div class="titleWrapper">
+    <br>
+<h1>RefineryApp</h1>
+<h2>Categorys</h2>
+    </div>
+    <div id="category_wrapper" ng-controller="CategoryController">
+        <div id="category_inner">
+            <div class = "category" ng-repeat="category in categorys" align = "center">
+                <p>Id: {{category.id}}</p>
+                <p>Name: {{category.category_name}}</p>
+                <p>Desc: {{category.category_Description}}</p>
+                <p>Created At: {{category.date_Created}}</p>
+                <p>Updated At: {{category.last_Modified}}</p>
+                <div class="view_delete"><button class = "view">View</button><button class = "delete">Delete</button></div>
+            </div>
+        </div>
+    </div>
+{% endverbatim %}
+</body>
+</html>
+
+
+
